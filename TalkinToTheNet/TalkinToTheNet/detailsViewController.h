@@ -14,5 +14,4 @@
 @interface detailsViewController : UIViewController
 @property (nonatomic) NSString *placeName;
 
-
 @end

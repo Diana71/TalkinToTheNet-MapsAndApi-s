@@ -31,11 +31,7 @@ UITableViewDelegate
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self fetchInstagramData];
-
-
 }
-
-
 
 -(void)fetchInstagramData{
     
@@ -59,22 +55,13 @@ UITableViewDelegate
             [self.searchResults addObject:post];
         }
         
-        NSLog(@"json %@", json);
-        
         [self.tableView reloadData];
-        
     }];
-    
 }
-
-
-
-
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 

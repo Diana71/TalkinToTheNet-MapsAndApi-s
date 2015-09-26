@@ -7,21 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>//for images
-
 
 @interface searchResults : NSObject
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString * formattedPhone;
-@property (nonatomic) NSString * formattedAddress;
-
-
 @property (nonatomic) NSString *fullAddress;
-@property (nonatomic) UIImage *image;
-@property (nonatomic) NSString * coordinates;
 @property (nonatomic) NSString * checkIns;
 @property (nonatomic) NSString * url;
-
 
 @end

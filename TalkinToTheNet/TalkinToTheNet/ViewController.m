@@ -34,7 +34,6 @@
     
     mapView_.myLocationEnabled = YES;
     
-    
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:40.7141667
@@ -49,8 +48,8 @@
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(40.7141667, -74.0063889);
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
+    marker.title = @"New York";
+    marker.snippet = @"NY";
     marker.map = mapView_;
     
     // Listen to the myLocation property of GMSMapView.
@@ -64,24 +63,20 @@
     // Ask for My Location data after the map has already been added to the UI.
     dispatch_async(dispatch_get_main_queue(), ^{
         mapView_.myLocationEnabled = YES;
-//        NSLog(@"my loc %@",mapView_.myLocation);
-//        NSLog(@"pos %c",marker.position);
     });
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"myLocation"]) {
-        NSLog(@"MIKEEEEEE lat %f", mapView_.myLocation.coordinate.latitude);
-        NSLog(@"MIKEEEEEE long %f", mapView_.myLocation.coordinate.longitude);
+        NSLog(@"lat %f", mapView_.myLocation.coordinate.latitude);
+        NSLog(@"long %f", mapView_.myLocation.coordinate.longitude);
         NSLog(@"keyPath %@", keyPath);
-        // Creates a marker in the center of the map.
-//            GMSMarker *marker = [[GMSMarker alloc] init];
+ //            GMSMarker *marker = [[GMSMarker alloc] init];
 //            marker.position = CLLocationCoordinate2DMake(mapView_.myLocation.coordinate.latitude, mapView_.myLocation.coordinate.longitude);
 //        
 //            marker.title = @"New York";
 //            marker.snippet = @"NY";
 //            marker.map = mapView_;
-        
         
     } else {
         
@@ -112,16 +107,8 @@
 //    }
 //}
 
-
-
-
-
 - (BOOL)didTapMyLocationButtonForMapView:(GMSMapView *)mapView {
     return YES;
 }
-
-
-
-
-
+ 
 @end

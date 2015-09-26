@@ -35,20 +35,13 @@ UITextFieldDelegate
     self.tableView.delegate = self;
     self.searchTextField.delegate = self;
     self.locationTextField.delegate = self;
-    NSLog(@"WHY IT'S NOT WORKINGGGGGGG");
     self.view.backgroundColor = [UIColor colorWithRed:0.91 green:0.95 blue:0.98 alpha:1.0];
 }
-
-
-
-
 
 -(void) makeNewAPIRequestWithSearchTerm:(NSString *)searchTerm
                                   andLocation:(NSString*) searchLocation
                                 callBackBlock:(void(^)())block {
     
-    NSLog(@"methoddddd");
-   
      if ([searchLocation isEqualToString:@""] && [searchTerm isEqualToString:@""]) {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No results!"
@@ -58,11 +51,8 @@ UITextFieldDelegate
                                               otherButtonTitles:nil];
         [alert show];
         NSLog(@"both empty");
-         
     }
-    
      else {
-         
          if ([searchLocation isEqualToString:@""]) {
          searchLocation = @"New York";
          NSLog(@"location is empty");
@@ -72,11 +62,10 @@ UITextFieldDelegate
 
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?near=%@&query=%@&client_id=HFUCKJHNO0CLHVKGCCVDZXSLNAERSCXTMAJY35DQOHYRVWXV&client_secret=OACRH5SEMEHGRHE2PKPJY0DLR5NLKLBM202DEHL3HFKNWCDU&v=20150924",searchLocation, searchTerm];
     
-    
     //encoded url
     NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
-    NSLog(@"urlString  %@",encodedString);
+    NSLog(@"encodedString  %@",encodedString);
     
     //convert urlString to url
     NSURL *url = [NSURL URLWithString:encodedString];
@@ -84,45 +73,27 @@ UITextFieldDelegate
     [APIManager GETRequestWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         if (data != nil) {
-            //        if data == nil, then this will crash, so add a condition
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            
             NSArray *results = [[json objectForKey:@"response"] objectForKey:@"venues"];
-            
+        
             self.searchResults = [[NSMutableArray alloc] init];
-            
-            
             
             for (NSDictionary *result in results) {
                 
-                
                 NSString *placeName = [result objectForKey:@"name"];
                 NSString *address = [[result objectForKey:@"location"] objectForKey:@"address"];
-                
                 NSString *city = [[result objectForKey:@"location"] objectForKey:@"city"];
                 NSString *state = [[result objectForKey:@"location"] objectForKey:@"state"];
                 NSString *postalCode = [[result objectForKey:@"location"] objectForKey:@"postalCode"];
-                
                 NSString *phoneNumber = [[result objectForKey:@"contact"] objectForKey:@"formattedPhone"];
-                NSString *addr = [[result objectForKey:@"location"] objectForKey:@"formattedAddress"];
                 NSString *urlDone = [result objectForKey:@"url"];
                 
-                NSLog(@"urrrrrrl %@", urlDone);
                 searchResults *newObject = [[searchResults alloc] init];
                 newObject.name = placeName;
                 newObject.formattedPhone = phoneNumber;
-                newObject.formattedAddress = addr;
-                
-                
                 newObject.fullAddress = [NSString stringWithFormat:@"%@ %@, %@ %@", address, city, state, postalCode];
-                
-                
-                NSString *latitude = [[[result objectForKey:@"location"] objectForKey:@"lat"] stringValue];
-                NSString *longitude = [[[result objectForKey:@"location"] objectForKey:@"lng"] stringValue];
                 newObject.url = urlDone;
                 newObject.checkIns = [[[result objectForKey:@"stats"] objectForKey:@"checkinsCount"] stringValue];
-                
-                newObject.coordinates = [latitude stringByAppendingString:[NSString stringWithFormat:@",%@", longitude]];
                 
                  [self.searchResults addObject:newObject];
             }
@@ -137,7 +108,6 @@ UITextFieldDelegate
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 # pragma mark -tableView delegate methods
@@ -147,50 +117,33 @@ UITextFieldDelegate
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return self.searchResults.count;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     
-    NSLog(@"uhhh");
     searchResults * result = [self.searchResults objectAtIndex:indexPath.row];
 
     cell.nameLabel.text = result.name;
     cell.phoneLabel.text = [NSString stringWithFormat:@"Phone: %@", result.formattedPhone];
     cell.addressLabel.text = [NSString stringWithFormat:@"Address: %@",result.fullAddress];
-    cell.urlLabel.text = [NSString stringWithFormat:@"Url: %@",result.url];
-    
-    
-    
-    
-//    cell.detailTextLabel.text = result.formattedPhone;
-    NSLog(@"%@ ", result.fullAddress);
-    
-    
-    
-    NSLog(@"%@ ", result.formattedAddress );
-    
+    cell.urlLabel.text = [NSString stringWithFormat:@"Website: %@",result.url];
+
     return cell;
 }
 
-
 # pragma mark - text field delegate methods
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
-    [self.view endEditing:YES];
     
+    [self.view endEditing:YES];
     NSString * query = self.searchTextField.text;
     
     [self makeNewAPIRequestWithSearchTerm:query andLocation:textField.text callBackBlock:^{
         [self.tableView reloadData];
-        NSLog(@"thisss");
     }];
-    
     return YES;
 }
-
  
 #pragma mark Cells color
 - (void)tableView: (UITableView*)tableView
@@ -203,7 +156,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     
 }
 
-
+#pragma mark Convert Name to tag
 
 - (NSString *)convertNameToTag: (NSString *)name{
     
@@ -212,8 +165,6 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     NSString *removeDash = [removeAmpersand stringByReplacingOccurrencesOfString:@"-" withString:@""];
     NSString *fixE = [removeDash stringByReplacingOccurrencesOfString:@"é" withString:@"e"];
     NSString *removeSpaces = [fixE stringByReplacingOccurrencesOfString:@" " withString:@""];
-//    NSString *fina = [removeSpaces stringByReplacingOccurrencesOfString:@"ErinMcKennasBabyCakes" withString:@"erinmckennasbakery"];
-    
     NSString *tagName = [removeSpaces lowercaseString];
     
     return tagName;
