@@ -10,7 +10,7 @@
 
 @interface InstaPostsTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (weak, nonatomic) IBOutlet UIView *image;
+//@property (weak, nonatomic) IBOutlet UIView *image;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *textCaptionLabel;
 

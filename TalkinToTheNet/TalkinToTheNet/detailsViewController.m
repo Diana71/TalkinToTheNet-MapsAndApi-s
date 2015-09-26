@@ -80,9 +80,9 @@ UITableViewDelegate
     InstaPost *post = self.searchResults[indexPath.row];
     
     cell.userLabel.text = [NSString stringWithFormat:@"@%@", post.username];
-//    cell.likesLabel.text = [NSString stringWithFormat:@"Likes: %ld",post.likeCount];
+    cell.likesLabel.text = [NSString stringWithFormat:@"%ld likes",post.likeCount];
     
-    cell.likesLabel.text = @"kot";
+//    cell.likesLabel.text = @"kot";
 
     cell.textCaptionLabel.text = post.caption[@"text"];
     
