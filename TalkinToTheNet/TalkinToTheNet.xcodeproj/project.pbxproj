@@ -14,6 +14,8 @@
 		845885001BB4F29E0073CA5D /* searchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 845884FF1BB4F29E0073CA5D /* searchResults.m */; settings = {ASSET_TAGS = (); }; };
 		845885031BB58DB50073CA5D /* detailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845885021BB58DB50073CA5D /* detailsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		845885071BB628460073CA5D /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845885061BB628460073CA5D /* CustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8458850A1BB641100073CA5D /* InstaPostsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845885091BB641100073CA5D /* InstaPostsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		8458850D1BB666C60073CA5D /* InstaPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458850C1BB666C60073CA5D /* InstaPost.m */; settings = {ASSET_TAGS = (); }; };
 		8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4A1BAF859400A92AD2 /* main.m */; };
 		8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4D1BAF859400A92AD2 /* AppDelegate.m */; };
 		8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD501BAF859400A92AD2 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 		845885021BB58DB50073CA5D /* detailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailsViewController.m; sourceTree = "<group>"; };
 		845885051BB628460073CA5D /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		845885061BB628460073CA5D /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		845885081BB641100073CA5D /* InstaPostsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPostsTableViewCell.h; sourceTree = "<group>"; };
+		845885091BB641100073CA5D /* InstaPostsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPostsTableViewCell.m; sourceTree = "<group>"; };
+		8458850B1BB666C60073CA5D /* InstaPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPost.h; sourceTree = "<group>"; };
+		8458850C1BB666C60073CA5D /* InstaPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPost.m; sourceTree = "<group>"; };
 		8D7DCD461BAF859400A92AD2 /* TalkinToTheNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkinToTheNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DCD4A1BAF859400A92AD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D7DCD4C1BAF859400A92AD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -107,6 +113,10 @@
 			children = (
 				845885011BB58DB50073CA5D /* detailsViewController.h */,
 				845885021BB58DB50073CA5D /* detailsViewController.m */,
+				845885081BB641100073CA5D /* InstaPostsTableViewCell.h */,
+				845885091BB641100073CA5D /* InstaPostsTableViewCell.m */,
+				8458850B1BB666C60073CA5D /* InstaPost.h */,
+				8458850C1BB666C60073CA5D /* InstaPost.m */,
 			);
 			name = DetailsViewController;
 			sourceTree = "<group>";
@@ -269,12 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8458850A1BB641100073CA5D /* InstaPostsTableViewCell.m in Sources */,
 				845885031BB58DB50073CA5D /* detailsViewController.m in Sources */,
 				845885001BB4F29E0073CA5D /* searchResults.m in Sources */,
 				8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */,
 				845884F61BB4EDBA0073CA5D /* searchViewController.m in Sources */,
 				8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */,
 				8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */,
+				8458850D1BB666C60073CA5D /* InstaPost.m in Sources */,
 				845885071BB628460073CA5D /* CustomTableViewCell.m in Sources */,
 				845884FB1BB4F0B30073CA5D /* APIManager.m in Sources */,
 			);
