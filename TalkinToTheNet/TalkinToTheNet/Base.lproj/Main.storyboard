@@ -277,6 +277,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageV" destination="YTW-hY-UdM" id="a7T-Mz-MfW"/>
                                             <outlet property="likesLabel" destination="j6U-vH-2em" id="z7y-kc-iyd"/>
                                             <outlet property="textCaptionLabel" destination="qVt-gW-857" id="eDE-Hi-YVT"/>
                                             <outlet property="userLabel" destination="IzU-CP-icj" id="0QR-Qr-OU9"/>
