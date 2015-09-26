@@ -194,22 +194,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-32-dUx">
-                                                    <rect key="frame" x="8" y="28" width="544" height="260"/>
+                                                    <rect key="frame" x="8" y="39" width="544" height="260"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="260" id="PDC-OG-Dhy"/>
                                                         <constraint firstAttribute="height" constant="260" id="R1A-os-rkd"/>
                                                         <constraint firstAttribute="width" constant="260" id="fq7-MV-X0J"/>
+                                                        <constraint firstAttribute="height" constant="260" id="qj0-Qn-hLt"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="PDC-OG-Dhy"/>
+                                                            <exclude reference="R1A-os-rkd"/>
                                                             <exclude reference="fq7-MV-X0J"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVt-gW-857">
-                                                    <rect key="frame" x="150" y="316" width="42" height="21"/>
+                                                    <rect key="frame" x="150" y="327" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="PWa-Dp-Os2"/>
                                                         <constraint firstAttribute="width" constant="42" id="eb1-00-bVa"/>
@@ -219,7 +221,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzU-CP-icj">
-                                                    <rect key="frame" x="8" y="-1" width="260" height="21"/>
+                                                    <rect key="frame" x="8" y="10" width="260" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="260" id="h9U-6c-NAJ"/>
                                                     </constraints>
@@ -228,7 +230,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6U-vH-2em">
-                                                    <rect key="frame" x="10" y="290" width="258" height="21"/>
+                                                    <rect key="frame" x="10" y="301" width="258" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Mge-At-WD3"/>
                                                         <constraint firstAttribute="width" constant="258" id="Ul5-lI-1ds"/>
@@ -245,6 +247,7 @@
                                                 <constraint firstItem="MFA-32-dUx" firstAttribute="leading" secondItem="lt8-fI-a5K" secondAttribute="leadingMargin" id="8V6-hE-xUo"/>
                                                 <constraint firstItem="qVt-gW-857" firstAttribute="top" secondItem="j6U-vH-2em" secondAttribute="bottom" constant="5" id="Alk-5N-TSp"/>
                                                 <constraint firstItem="MFA-32-dUx" firstAttribute="centerY" secondItem="lt8-fI-a5K" secondAttribute="centerY" id="BjW-pG-r7d"/>
+                                                <constraint firstItem="IzU-CP-icj" firstAttribute="top" secondItem="lt8-fI-a5K" secondAttribute="topMargin" constant="2" id="NPr-k2-Uzs"/>
                                                 <constraint firstItem="qVt-gW-857" firstAttribute="leading" secondItem="lt8-fI-a5K" secondAttribute="leadingMargin" constant="142" id="PK2-lx-O4v"/>
                                                 <constraint firstItem="j6U-vH-2em" firstAttribute="leading" secondItem="lt8-fI-a5K" secondAttribute="leadingMargin" constant="142" id="X1y-4q-p8h"/>
                                                 <constraint firstItem="j6U-vH-2em" firstAttribute="top" secondItem="MFA-32-dUx" secondAttribute="bottom" constant="2" id="hLP-6s-7TX"/>
@@ -255,7 +258,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="4Be-KS-HG7"/>
                                                     <exclude reference="BjW-pG-r7d"/>
+                                                    <exclude reference="qEu-aZ-aqH"/>
                                                     <exclude reference="X1y-4q-p8h"/>
                                                     <exclude reference="tG7-Sj-hss"/>
                                                 </mask>
