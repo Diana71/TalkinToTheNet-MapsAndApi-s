@@ -57,7 +57,6 @@ UITextFieldDelegate
          searchLocation = @"New York";
          NSLog(@"location is empty");
      }
-    
         NSLog(@"that's ok!");
 
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?near=%@&query=%@&client_id=HFUCKJHNO0CLHVKGCCVDZXSLNAERSCXTMAJY35DQOHYRVWXV&client_secret=OACRH5SEMEHGRHE2PKPJY0DLR5NLKLBM202DEHL3HFKNWCDU&v=20150924",searchLocation, searchTerm];
