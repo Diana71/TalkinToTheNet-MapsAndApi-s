@@ -26,6 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView* img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"insta"]];
+    self.navigationItem.titleView = img;
+    
+    
     [self fetchInstagramData];
     NSLog(@"detailsss");
     
@@ -57,22 +61,12 @@
 
 
 - (void)fetchInstagramData {
+ 
     
-//    // create an instagram url
-//    NSString *urlString = @"https://api.instagram.com/v1/tags/goldenretriever/media/recent?client_id=ac0ee52ebb154199bfabfb15b498c067";
-//    
-    
-    self.placeName = @"cat";
-    // create an instagram url
+     // create an instagram url
     NSString *urlString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a2c55d5958864f32a2b1af4f8b01c8db", self.placeName];
     
 
-    
-//    NSString *placeNameUrl = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?client_id=a2c55d5958864f32a2b1af4f8b01c8db", self.placeName];
-//    
-//    NSURL *instagramURL = [NSURL URLWithString:placeNameUrl];
-//    
-    
     
     
     
