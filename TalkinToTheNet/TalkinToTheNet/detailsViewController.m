@@ -27,6 +27,10 @@ UITableViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.view.backgroundColor = [UIColor colorWithRed:0.91 green:0.95 blue:0.98 alpha:1.0];
+    UIImageView* img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ins"]];
+    
+    self.navigationItem.titleView = img;
+
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

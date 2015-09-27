@@ -9,7 +9,7 @@
 #import "searchViewController.h"
 #import "APIManager.h"
 #import "searchResults.h"
-#import "detailsViewController.h"
+#import "DetailsTableViewController.h"
 #import "ViewController.h"
 #import "CustomTableViewCell.h"
  
@@ -179,7 +179,7 @@ forRowAtIndexPath: (NSIndexPath*)indexPath
     
     NSString *currentResultTagName = [self convertNameToTag:userSelection.name];
     
-    detailsViewController *vc = segue.destinationViewController;
+    DetailsTableViewController *vc = segue.destinationViewController;
     
     vc.placeName = currentResultTagName;
     

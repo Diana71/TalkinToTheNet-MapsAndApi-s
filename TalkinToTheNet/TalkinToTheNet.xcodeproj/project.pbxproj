@@ -16,6 +16,12 @@
 		845885071BB628460073CA5D /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845885061BB628460073CA5D /* CustomTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		8458850A1BB641100073CA5D /* InstaPostsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 845885091BB641100073CA5D /* InstaPostsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		8458850D1BB666C60073CA5D /* InstaPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 8458850C1BB666C60073CA5D /* InstaPost.m */; settings = {ASSET_TAGS = (); }; };
+		84D7518A1BB772C1009C6FA7 /* DetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D751891BB772C1009C6FA7 /* DetailsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84D7518D1BB7788D009C6FA7 /* InstagramPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D7518C1BB7788D009C6FA7 /* InstagramPost.m */; settings = {ASSET_TAGS = (); }; };
+		84D7518F1BB77A03009C6FA7 /* InstagramPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D7518E1BB77A03009C6FA7 /* InstagramPostTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		84D751921BB77C39009C6FA7 /* InstagramPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D751911BB77C39009C6FA7 /* InstagramPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		84D751951BB78278009C6FA7 /* InstagramPostHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D751941BB78278009C6FA7 /* InstagramPostHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		84D751981BB78387009C6FA7 /* InstagramPostHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D751971BB78387009C6FA7 /* InstagramPostHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
 		8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4A1BAF859400A92AD2 /* main.m */; };
 		8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4D1BAF859400A92AD2 /* AppDelegate.m */; };
 		8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD501BAF859400A92AD2 /* ViewController.m */; };
@@ -41,6 +47,16 @@
 		845885091BB641100073CA5D /* InstaPostsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPostsTableViewCell.m; sourceTree = "<group>"; };
 		8458850B1BB666C60073CA5D /* InstaPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPost.h; sourceTree = "<group>"; };
 		8458850C1BB666C60073CA5D /* InstaPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPost.m; sourceTree = "<group>"; };
+		84D751881BB772C1009C6FA7 /* DetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsTableViewController.h; sourceTree = "<group>"; };
+		84D751891BB772C1009C6FA7 /* DetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsTableViewController.m; sourceTree = "<group>"; };
+		84D7518B1BB7788D009C6FA7 /* InstagramPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramPost.h; sourceTree = "<group>"; };
+		84D7518C1BB7788D009C6FA7 /* InstagramPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPost.m; sourceTree = "<group>"; };
+		84D7518E1BB77A03009C6FA7 /* InstagramPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramPostTableViewCell.xib; sourceTree = "<group>"; };
+		84D751901BB77C39009C6FA7 /* InstagramPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramPostTableViewCell.h; sourceTree = "<group>"; };
+		84D751911BB77C39009C6FA7 /* InstagramPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPostTableViewCell.m; sourceTree = "<group>"; };
+		84D751931BB78278009C6FA7 /* InstagramPostHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramPostHeaderView.h; sourceTree = "<group>"; };
+		84D751941BB78278009C6FA7 /* InstagramPostHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramPostHeaderView.m; sourceTree = "<group>"; };
+		84D751971BB78387009C6FA7 /* InstagramPostHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramPostHeaderView.xib; sourceTree = "<group>"; };
 		8D7DCD461BAF859400A92AD2 /* TalkinToTheNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkinToTheNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DCD4A1BAF859400A92AD2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D7DCD4C1BAF859400A92AD2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +127,24 @@
 		845885041BB58DBB0073CA5D /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84D751881BB772C1009C6FA7 /* DetailsTableViewController.h */,
+				84D751891BB772C1009C6FA7 /* DetailsTableViewController.m */,
+				84D7518B1BB7788D009C6FA7 /* InstagramPost.h */,
+				84D7518C1BB7788D009C6FA7 /* InstagramPost.m */,
+				84D7518E1BB77A03009C6FA7 /* InstagramPostTableViewCell.xib */,
+				84D751901BB77C39009C6FA7 /* InstagramPostTableViewCell.h */,
+				84D751911BB77C39009C6FA7 /* InstagramPostTableViewCell.m */,
+				84D751931BB78278009C6FA7 /* InstagramPostHeaderView.h */,
+				84D751941BB78278009C6FA7 /* InstagramPostHeaderView.m */,
+				84D751971BB78387009C6FA7 /* InstagramPostHeaderView.xib */,
+				84D751961BB782C5009C6FA7 /* UIViewTable */,
+			);
+			name = DetailsViewController;
+			sourceTree = "<group>";
+		};
+		84D751961BB782C5009C6FA7 /* UIViewTable */ = {
+			isa = PBXGroup;
+			children = (
 				845885011BB58DB50073CA5D /* detailsViewController.h */,
 				845885021BB58DB50073CA5D /* detailsViewController.m */,
 				845885081BB641100073CA5D /* InstaPostsTableViewCell.h */,
@@ -118,7 +152,7 @@
 				8458850B1BB666C60073CA5D /* InstaPost.h */,
 				8458850C1BB666C60073CA5D /* InstaPost.m */,
 			);
-			name = DetailsViewController;
+			name = UIViewTable;
 			sourceTree = "<group>";
 		};
 		8B97313010F2F2DD6E2B99FB /* Pods */ = {
@@ -234,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7DCD591BAF859400A92AD2 /* LaunchScreen.storyboard in Resources */,
+				84D751981BB78387009C6FA7 /* InstagramPostHeaderView.xib in Resources */,
 				8D7DCD561BAF859400A92AD2 /* Assets.xcassets in Resources */,
+				84D7518F1BB77A03009C6FA7 /* InstagramPostTableViewCell.xib in Resources */,
 				8D7DCD541BAF859400A92AD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,15 +315,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D751951BB78278009C6FA7 /* InstagramPostHeaderView.m in Sources */,
 				8458850A1BB641100073CA5D /* InstaPostsTableViewCell.m in Sources */,
 				845885031BB58DB50073CA5D /* detailsViewController.m in Sources */,
+				84D751921BB77C39009C6FA7 /* InstagramPostTableViewCell.m in Sources */,
 				845885001BB4F29E0073CA5D /* searchResults.m in Sources */,
+				84D7518A1BB772C1009C6FA7 /* DetailsTableViewController.m in Sources */,
 				8D7DCD511BAF859400A92AD2 /* ViewController.m in Sources */,
 				845884F61BB4EDBA0073CA5D /* searchViewController.m in Sources */,
 				8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */,
 				8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */,
 				8458850D1BB666C60073CA5D /* InstaPost.m in Sources */,
 				845885071BB628460073CA5D /* CustomTableViewCell.m in Sources */,
+				84D7518D1BB7788D009C6FA7 /* InstagramPost.m in Sources */,
 				845884FB1BB4F0B30073CA5D /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
