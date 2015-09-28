@@ -133,7 +133,7 @@
     headerView.usernameLabel.text = post.username;
     
     // make the avatar a circle
-    headerView.avatarImageView.layer.cornerRadius = 15.0;
+    headerView.avatarImageView.layer.cornerRadius = headerView.avatarImageView.frame.size.width/2;
     headerView.avatarImageView.layer.masksToBounds = YES;
     
     // create a url from the post avatartImageURL (originally a string)
@@ -151,8 +151,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 50.0;
 }
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.detailsResults.count;
