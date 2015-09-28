@@ -12,7 +12,7 @@
 #import "DetailsTableViewController.h"
 #import "ViewController.h"
 #import "CustomTableViewCell.h"
- 
+
 @interface searchViewController ()
 <
 UITableViewDataSource,
@@ -23,7 +23,6 @@ UITextFieldDelegate
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *searchResults;
-
 
 @end
 
@@ -39,71 +38,77 @@ UITextFieldDelegate
 }
 
 -(void) makeNewAPIRequestWithSearchTerm:(NSString *)searchTerm
-                                  andLocation:(NSString*) searchLocation
-                                callBackBlock:(void(^)())block {
+                            andLocation:(NSString*) searchLocation
+                          callBackBlock:(void(^)())block {
     
-     if ([searchLocation isEqualToString:@""] && [searchTerm isEqualToString:@""]) {
+    if ([searchLocation isEqualToString:@""] || [searchTerm isEqualToString:@""]) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No results!"
-                                                        message:@"Please fill out the textfields"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+
+        
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"No results!" message:@"Please fill out the textfields" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alertController dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+       [alertController addAction:ok];
+
+    [self presentViewController:alertController animated:YES
+                         completion:nil];
         NSLog(@"both empty");
     }
-     else {
-         if ([searchLocation isEqualToString:@""]) {
-         searchLocation = @"New York";
-         NSLog(@"location is empty");
-     }
-        NSLog(@"that's ok!");
-
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?near=%@&query=%@&client_id=HFUCKJHNO0CLHVKGCCVDZXSLNAERSCXTMAJY35DQOHYRVWXV&client_secret=OACRH5SEMEHGRHE2PKPJY0DLR5NLKLBM202DEHL3HFKNWCDU&v=20150924",searchLocation, searchTerm];
-    
-    //encoded url
-    NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    
-    NSLog(@"encodedString  %@",encodedString);
-    
-    //convert urlString to url
-    NSURL *url = [NSURL URLWithString:encodedString];
-    
-    [APIManager GETRequestWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if (data != nil) {
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSArray *results = [[json objectForKey:@"response"] objectForKey:@"venues"];
-        
-            self.searchResults = [[NSMutableArray alloc] init];
-            
-            for (NSDictionary *result in results) {
-                
-                NSString *placeName = [result objectForKey:@"name"];
-                NSString *address = [[result objectForKey:@"location"] objectForKey:@"address"];
-                NSString *city = [[result objectForKey:@"location"] objectForKey:@"city"];
-                NSString *state = [[result objectForKey:@"location"] objectForKey:@"state"];
-                NSString *postalCode = [[result objectForKey:@"location"] objectForKey:@"postalCode"];
-                NSString *phoneNumber = [[result objectForKey:@"contact"] objectForKey:@"formattedPhone"];
-                NSString *urlDone = [result objectForKey:@"url"];
-                
-                searchResults *newObject = [[searchResults alloc] init];
-                newObject.name = placeName;
-                newObject.formattedPhone = phoneNumber;
-                newObject.fullAddress = [NSString stringWithFormat:@"%@ %@, %@ %@", address, city, state, postalCode];
-                newObject.url = urlDone;
-                newObject.checkIns = [[[result objectForKey:@"stats"] objectForKey:@"checkinsCount"] stringValue];
-                
-                 [self.searchResults addObject:newObject];
-            }
-            block();
+    else {
+        if ([searchLocation isEqualToString:@""]) {
+            searchLocation = @"New York";
+            NSLog(@"location is empty");
         }
-    }];
+        NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?near=%@&query=%@&client_id=HFUCKJHNO0CLHVKGCCVDZXSLNAERSCXTMAJY35DQOHYRVWXV&client_secret=OACRH5SEMEHGRHE2PKPJY0DLR5NLKLBM202DEHL3HFKNWCDU&v=20150924",searchLocation, searchTerm];
+        
+        //encoded url
+        NSString *encodedString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        
+        NSLog(@"encodedString  %@",encodedString);
+        
+        //convert urlString to url
+        NSURL *url = [NSURL URLWithString:encodedString];
+        
+        [APIManager GETRequestWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            
+            if (data != nil) {
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSArray *results = [[json objectForKey:@"response"] objectForKey:@"venues"];
+                
+                self.searchResults = [[NSMutableArray alloc] init];
+                
+                for (NSDictionary *result in results) {
+                    
+                    NSString *placeName = [result objectForKey:@"name"];
+                    NSString *address = [[result objectForKey:@"location"] objectForKey:@"address"];
+                    NSString *city = [[result objectForKey:@"location"] objectForKey:@"city"];
+                    NSString *state = [[result objectForKey:@"location"] objectForKey:@"state"];
+                    NSString *postalCode = [[result objectForKey:@"location"] objectForKey:@"postalCode"];
+                    NSString *phoneNumber = [[result objectForKey:@"contact"] objectForKey:@"formattedPhone"];
+                    NSString *urlDone = [result objectForKey:@"url"];
+                    
+                    searchResults *newObject = [[searchResults alloc] init];
+                    newObject.name = placeName;
+                    newObject.formattedPhone = phoneNumber;
+                    newObject.fullAddress = [NSString stringWithFormat:@"%@ %@, %@ %@", address, city, state, postalCode];
+                    newObject.url = urlDone;
+                    newObject.checkIns = [[[result objectForKey:@"stats"] objectForKey:@"checkinsCount"] stringValue];
+                    
+                    [self.searchResults addObject:newObject];
+                }
+                block();
+            }
+        }];
+    }
 }
-}
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

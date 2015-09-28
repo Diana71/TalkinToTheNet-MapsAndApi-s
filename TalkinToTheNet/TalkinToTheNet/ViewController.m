@@ -85,7 +85,6 @@
     }
 }
 
-
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -95,17 +94,6 @@
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
 }
-
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-//{
-//    NSLog(@"didUpdateToLocation: %@", newLocation);
-//    CLLocation *currentLocation = newLocation;
-//    
-//    if (currentLocation != nil) {
-//        NSLog ( @"longitude %.8f", currentLocation.coordinate.longitude);
-//        NSLog ( @"latitude %.8f", currentLocation.coordinate.latitude);
-//    }
-//}
 
 - (BOOL)didTapMyLocationButtonForMapView:(GMSMapView *)mapView {
     return YES;

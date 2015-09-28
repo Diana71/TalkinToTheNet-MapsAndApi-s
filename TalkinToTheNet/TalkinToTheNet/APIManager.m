@@ -22,7 +22,6 @@ completionBlock {
         dispatch_async(dispatch_get_main_queue(), ^ {
             completionBlock(data, response, error);
         });
-        
     }];
     [task resume];
 }
